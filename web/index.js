@@ -163,6 +163,8 @@ const sideBarScroll = (event)=>{
 	
 	const contentElem = document.querySelector("#content");
 
+	const popularArticles = document.querySelector("#popularArticles");
+
 	if(event.target.textContent === "Posts"){
 
 		contentElem.scrollIntoView({behavior:"smooth"});
@@ -171,7 +173,11 @@ const sideBarScroll = (event)=>{
 	
 		introElem.scrollIntoView({behavior:"smooth"});
 
-	}
+	} else {
+	
+		popularArticles.scrollIntoView({behavior:"smooth"});
+
+	} 
 }
 
 

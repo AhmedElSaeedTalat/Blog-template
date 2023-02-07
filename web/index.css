@@ -19,10 +19,14 @@ header{
 #header{
 	grid-area:tp;
 }
-
-#mainContent{
+#body{
 	grid-area:md;
 }
+
+#mainContent{
+	
+}
+
 
 
 #footer{
@@ -43,6 +47,7 @@ header{
 	background-color: #055a05;
 	color:white;
 	border-radius: 5px;
+	margin-top: 20px;
 }
 
 #publish li{
@@ -117,6 +122,10 @@ header{
 	color: white;
 }
 
+#content{
+	min-height: 300px;
+}
+
 #content div{
     background-color: #d2d4d2;
     width: 100%;
@@ -137,23 +146,23 @@ header{
     padding-bottom: 4px;
 }
 
-#mainContent .intro{
+#mainContent #intro{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 
 }
-.intro p{
+#intro p{
 	width: 60%;
 }
-.intro img{
+#intro img{
 	width: 374px;
 	height: auto;
 	margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1209px )  {
-  	.intro p{
+  	#intro p{
   		width: 98%;
   	}
 }
@@ -196,4 +205,58 @@ footer{
 }
 #footer ul li a:hover{
 	color:wheat;
+}
+
+#popularArticles {
+
+	display: grid;
+	grid-gap: 10px;
+	grid-template-areas: 
+	"tp tp tp"
+	"bt bt sid";
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#popularArticles .top{
+	grid-area: tp;
+	display: flex;
+	justify-content: space-evenly;
+}
+#popularArticles .bottom{
+	grid-area: bt;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+
+#popularArticles .bottom div{
+	width: 35%;
+	position: relative;
+	margin: 10px;
+}
+#popularArticles  p{
+	position: absolute;
+    color: white;
+    bottom: 0px;
+    left: 19px;
+    font-weight: bold;
+    font-size: 23px;
+}
+#popularArticles img{
+	width: 100%;
+}
+#popularArticles .side{
+	width: 55%;
+	position: relative;
+	grid-area: sid;
+	margin:10px;
+}
+#popularArticles .side p{
+	position: absolute;
+    color: white;
+    bottom: 0px;
+    left: 19px;
+    font-weight: bold;
+    font-size: 23px;
 }
