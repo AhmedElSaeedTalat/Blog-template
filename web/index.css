@@ -23,11 +23,6 @@ header{
 	grid-area:md;
 }
 
-#mainContent{
-	
-}
-
-
 
 #footer{
 	grid-area:ft;
@@ -126,7 +121,7 @@ header{
 	min-height: 300px;
 }
 
-#content div{
+.con div{
     background-color: #d2d4d2;
     width: 100%;
     border-radius: 5px;
@@ -134,11 +129,11 @@ header{
     overflow: hidden;
     margin: 10px 0px 0px 0px;
 }
-#content div p:first-child{
+.con div p:first-child{
 	padding-left: 5px;
 	
 }
-#content div p:nth-last-child(1){
+.con div p:nth-last-child(1){
 	float: right;
     margin: 0;
     font-size: 13px;
@@ -146,11 +141,14 @@ header{
     padding-bottom: 4px;
 }
 
-#mainContent #intro{
+ #intro{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 
+}
+#intro h3{
+	width:100%;
 }
 #intro p{
 	width: 60%;

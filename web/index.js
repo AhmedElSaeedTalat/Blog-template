@@ -2,7 +2,7 @@
 
 const menuLinks = document.querySelector(".menu");
 
-const publishedContentDiv = document.querySelector("#content");
+const publishedContentDiv = document.querySelector(".con");
 
 const formBtn = document.querySelector('.insterPostBtn');
 
@@ -111,6 +111,18 @@ const menuClick = (event) => {
 const moveSideBar = () => {
 
 
+	const contentElem = document.querySelector("#intro");
+
+	const conLocationTop = contentElem.getBoundingClientRect().top;
+
+	const conLocationBottom = contentElem.getBoundingClientRect().bottom;
+	
+	let ht = conLocationBottom - conLocationTop;
+	// console.log(conLocationTop);
+
+	console.log(ht);
+
+
 	//change sideBar location based on scrollBar
 
 	let header = document.querySelector('header');
@@ -132,19 +144,23 @@ const moveSideBar = () => {
 		
 		let sectionTop	= section.getBoundingClientRect().top;
 		
-		let sectionBottom = section.getBoundingClientRect().bottom
+		let sectionBottom = section.getBoundingClientRect().bottom;
 		
-		let sectionHeight = sectionBottom-sectionTop;
+		let sectionHeight = sectionBottom - sectionTop;
 
 		let sideBarLinks = document.querySelectorAll("#sideBar li");
 
-
-		if(sectionBottom > sectionHeight && sectionTop < sectionHeight) {
+		if( sectionTop  > -60 && sectionTop <= 5) {
 			
 			for(let link of sideBarLinks){
+
+				
 				if(section.getAttribute("id") === link.getAttribute(["data-nav"])){
+				
 					link.classList.add("act");			
+				
 				} else {
+				
 					link.classList.remove("act");
 				}
 		 }
@@ -159,21 +175,28 @@ const moveSideBar = () => {
 
 const sideBarScroll = (event)=>{
 
-	const introElem = document.querySelector("#mainContent");
+	const introElem = document.querySelector("#intro");
 	
-	const contentElem = document.querySelector("#content");
+	const contentElem = document.querySelector("#publish");
 
 	const popularArticles = document.querySelector("#popularArticles");
 
-	if(event.target.textContent === "Posts"){
 
-		contentElem.scrollIntoView({behavior:"smooth"});
-	
-	} else if(event.target.textContent === "Intro"){
+
+	if(event.target.textContent === "Intro"){
 	
 		introElem.scrollIntoView({behavior:"smooth"});
 
-	} else {
+	}
+
+	else if(event.target.textContent === "Posts"){
+
+		
+		contentElem.scrollIntoView({behavior:"smooth"});
+
+
+
+	}  else {
 	
 		popularArticles.scrollIntoView({behavior:"smooth"});
 
