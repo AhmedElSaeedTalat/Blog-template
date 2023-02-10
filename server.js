@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const router = express.Router();
+
 const postedInput = [];
 
 const news = {
@@ -63,3 +65,11 @@ app.get("/posts",postreview);
 
 // listen to port
 app.listen(port, lsiten);
+
+// new link
+
+
+const sendtogrammy = (req,res)=>{
+	res.sendFile("web/new.html",{root:'.'});
+}
+app.get("/grammy",sendtogrammy);

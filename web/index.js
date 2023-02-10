@@ -120,7 +120,8 @@ const moveSideBar = () => {
 	let ht = conLocationBottom - conLocationTop;
 	// console.log(conLocationTop);
 
-	console.log(ht);
+	console.log(conLocationTop);
+	console.log(conLocationBottom);
 
 
 	//change sideBar location based on scrollBar
@@ -150,7 +151,7 @@ const moveSideBar = () => {
 
 		let sideBarLinks = document.querySelectorAll("#sideBar li");
 
-		if( sectionTop  > -60 && sectionTop <= 5) {
+		if( sectionTop  > -80 && sectionTop <= 20 || sectionBottom  > 0 && sectionBottom <= 150) {
 			
 			for(let link of sideBarLinks){
 
@@ -335,8 +336,19 @@ const getPosts = async (url) =>{
 
 }
 
+const sendToLink =  async () =>{
+	
+	const response = await fetch("/grammy");
+	
+	try{
+		
+		const data = await response.json();
 
-
+	} catch(error) {
+		
+		console.log(error);
+	}
+}
 
 // Events
 
@@ -354,3 +366,4 @@ document.addEventListener('scroll',moveSideBar);
 
 // event to add another page 
 
+document.querySelector("#grammy").addEventListener("click",sendToLink);
