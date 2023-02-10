@@ -65,7 +65,7 @@ const menuClick = (event) => {
 
 		// add Content
 		
-		if(event.target.innerHTML === "News"){
+		if(event.target.innerHTML === "Places to visit"){
 
 			getNews("/news").then(function(data){
 
@@ -336,6 +336,8 @@ const getPosts = async (url) =>{
 }
 
 
+
+
 // Events
 
 menuLinks.addEventListener("click",menuClick);
@@ -349,4 +351,6 @@ document.addEventListener('DOMContentLoaded',insertPostLoad);
 // sideBar event 
 
 document.addEventListener('scroll',moveSideBar);
+
+// event to add another page 
 
